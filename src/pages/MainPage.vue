@@ -1,10 +1,11 @@
 <script>
 import { defineComponent } from 'vue';
+import TodoListComponent from '../components/TodoListComponent.vue';
 
 export default defineComponent({
   name: 'MainPage',
   components: {
-
+    TodoListComponent
   },
 
   setup() {
@@ -17,7 +18,7 @@ export default defineComponent({
 
 <template>
   <main class="w-[73.75rem]">
-    <div>hello</div>
+    <TodoListComponent />
   </main>
 </template>
 
