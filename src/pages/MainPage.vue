@@ -2,12 +2,14 @@
 import { defineComponent } from 'vue';
 import TodoListComponent from '../components/TodoListComponent.vue';
 import ProductsListComponent from '../components/ProductsListComponent.vue';
+import ProductsTilesComponent from '../components/ProductsTilesComponent.vue';
 
 export default defineComponent({
   name: 'MainPage',
   components: {
     TodoListComponent,
-    ProductsListComponent
+    ProductsListComponent,
+    ProductsTilesComponent
   },
 
   setup() {
@@ -19,9 +21,10 @@ export default defineComponent({
 </script>
 
 <template>
-  <main class="w-[73.75rem]">
+  <main class="grid grid-cols-3 gap-4 w-[73.75rem] mb-10">
     <TodoListComponent />
-    <ProductsListComponent />
+    <ProductsListComponent class="col-span-2" />
+    <ProductsTilesComponent class="col-span-3" />
   </main>
 </template>
 
