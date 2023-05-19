@@ -2,7 +2,7 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: 'App',
+  name: 'MainPage',
   components: {
 
   },
@@ -15,6 +15,10 @@ export default defineComponent({
 
 </script>
 
-<template></template>
+<template>
+  <main class="w-[73.75rem]">
+    <div>hello</div>
+  </main>
+</template>
 
 <style></style>
