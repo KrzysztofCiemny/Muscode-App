@@ -17,3 +17,11 @@
   }
 
 }
+@layer components {
+  .table-header-cell {
+    @apply uppercase font-normal px-4 py-2 text-left
+  }
+  .table-data-cell {
+    @apply px-4 py-2 whitespace-nowrap
+  }
+}
