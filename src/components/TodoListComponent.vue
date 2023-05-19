@@ -1,6 +1,7 @@
 <script>
 import { computed, defineComponent, ref } from 'vue';
 import CardComponent from './CardComponent.vue';
+import todoTasks from '../data/todoListData';
 
 export default defineComponent({
   name: 'TodoListComponent',
@@ -9,41 +10,12 @@ export default defineComponent({
   },
 
   setup() {
-    const todoTasks = ref([
-      {
-        id: 1,
-        content: 'Lorem ipsum dolor sit amet, consectetur',
-        done: false,
-      },
-      {
-        id: 2,
-        content: 'Lorem ipsum dolor sit amet, consectetur',
-        done: false,
-      },
-      {
-        id: 3,
-        content: 'Lorem ipsum dolor sit amet, consectetur',
-        done: false,
-      },
-      {
-        id: 4,
-        content: 'Lorem ipsum dolor sit amet, consectetur',
-        done: false,
-      },
-      {
-        id: 5,
-        content: 'Lorem ipsum dolor sit amet, consectetur',
-        done: false,
-      },
-    ])
-
     const completedTasks = ref([]);
     const completedTasksCounter = computed(() => {
       return completedTasks.value.length;
     })
 
     const newTask = ref('');
-
     const addToList = () => {
       if (newTask.value) {
         todoTasks.value.push({
