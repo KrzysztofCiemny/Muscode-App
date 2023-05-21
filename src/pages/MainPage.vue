@@ -9,7 +9,7 @@ export default defineComponent({
   components: {
     TodoListComponent,
     ProductsListComponent,
-    ProductsTilesComponent
+    ProductsTilesComponent,
   },
 
   setup() {

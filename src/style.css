@@ -24,4 +24,10 @@
   .table-data-cell {
     @apply px-4 py-2 whitespace-nowrap
   }
+  .modal-input {
+    @apply outline-none w-full border-b border-b-black px-1 py-1
+  }
+  .modal-input-span {
+    @apply text-button-active pl-1
+  }
 }

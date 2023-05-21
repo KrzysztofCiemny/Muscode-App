@@ -4,7 +4,7 @@ const productsData = ref([
   {
     id: 1,
     image: "img1.png",
-    name: "IPhone 6s Plus 16GB",
+    name: "iPhone 6s Plus 16GB",
     price: 1000,
     salePrice: 649,
     currency: "$",
@@ -12,7 +12,7 @@ const productsData = ref([
   {
     id: 2,
     image: "img2.png",
-    name: "IPad Pro 32GB",
+    name: "iPad Pro 32GB",
     price: 800,
     salePrice: 600,
     currency: "$",

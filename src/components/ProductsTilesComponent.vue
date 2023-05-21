@@ -1,18 +1,28 @@
 <script>
-import { defineComponent } from 'vue';
+import { defineComponent, ref } from 'vue';
 import CardComponent from './CardComponent.vue';
 import productsData from '../data/productsData';
+import ProductsModalComponent from '../components/ProductsModalComponent.vue'
 
 export default defineComponent({
   name: 'ProductsTilesComponent',
   components: {
-    CardComponent
+    CardComponent,
+    ProductsModalComponent
   },
 
   setup() {
-
+    const isOpen = ref(false);
+    const productIndex = ref(0)
+    const displayModal = (id) => {
+      isOpen.value = true;
+      productIndex.value = id - 1;
+    }
     return {
       productsData,
+      isOpen,
+      displayModal,
+      productIndex,
     }
   }
 });
@@ -21,7 +31,8 @@ export default defineComponent({
 
 <template>
   <section class="grid grid-cols-3 gap-4">
-    <CardComponent v-for="product in productsData" :key="product.id" class="relative overflow-hidden">
+    <CardComponent v-for="product in productsData" :key="product.id" class="relative overflow-hidden cursor-pointer"
+      @click="displayModal(product.id)">
       <template #header>
         <h5 class="text-base font-medium mb-3">{{ product.name }}</h5>
         <div v-if="product.salePrice"
@@ -35,12 +46,13 @@ export default defineComponent({
           <div class="flex flex-col items-center">
             <p v-if="product.salePrice" class="text-button-active font-semibold text-xl">{{ product.salePrice }} {{
               product.currency }}</p>
-            <p :class="!product.salePrice ? 'text-button-active font-semibold text-xl' : ''">{{ product.price
+            <p :class="!product.salePrice ? 'text-button-active font-semibold text-xl' : 'line-through'">{{ product.price
             }} {{ product.currency }}</p>
           </div>
         </div>
       </template>
     </CardComponent>
+    <ProductsModalComponent :isOpen="isOpen" :productIndex="productIndex" @isClosed="isOpen = false" />
   </section>
 </template>
 

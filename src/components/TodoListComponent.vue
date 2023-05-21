@@ -23,6 +23,7 @@ export default defineComponent({
           content: newTask.value,
           done: false,
         });
+        newTask.value = '';
       }
     }
 
